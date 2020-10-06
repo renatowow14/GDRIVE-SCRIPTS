@@ -34,14 +34,14 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 # Uso de execução:
 python GDrive.py list (lista todos os arquivos com seus IDs)
 
-python GDrive.py upload path (se o caminho for o arquivo, carregue-o. Se o caminho for dir, carregue o diretório vazio)
+python GDrive.py upload path (se o caminho for o arquivo, carregue-o. Se o caminho for diretorio, carregue o diretório vazio)
 
-python GDrive.py upload path R (o caminho deve be dir. dir é carregado recursivamente. todos os arquivos e sub dirs são carregados)
+python GDrive.py upload path R (informar o diretorio, o diretorio é carregado recursivamente. todos os arquivos, sub-diretorios e diretorios são carregados)
 
-python GDrive.py delete id (deletar arquivo ou dir com dado id)
+python GDrive.py delete id (deletar arquivo ou diretorio com dado o id)
 
-python GDrive.py download id (download dir ou arquivo com determinado id para o diretório atual)
+python GDrive.py download id . (download de diretorio ou arquivo com determinado id para o diretório atual)
 
 python GDrive.py download id caminho (download dir ou arquivo com determinado id para determinado caminho na máquina local)
 
-python GDrive.py share id e-mail (compartilhar arquivo ou dir com determinado id com e-mail)
+python GDrive.py share id e-mail (compartilhar arquivo ou diretorio com determinado id com e-mail)
