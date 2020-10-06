@@ -7,6 +7,7 @@ Conclua as etapas descritas no restante desta página para criar um aplicativo d
 Para executar este início rápido, você precisará de:
 
 Python 2.6 ou superior
+
 A ferramenta de gerenciamento de pacotes pip e Uma conta do Google com o Google Drive ativado
 
 # Etapa 1: ativar a API do Drive
