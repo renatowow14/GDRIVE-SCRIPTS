@@ -1,7 +1,9 @@
 # GDRIVE-SCRIPTS
 Cliente de terminal Python para Google Drive para fácil upload, exclusão, listagem, compartilhamento de arquivos ou pastas. (Veja o uso no comentário)
+
 Mantenha GDrive.py e client_secret.json no mesmo diretório.
-Uso de execução:
+
+#Uso de execução:
 python GDrive.py list (lista todos os arquivos com seus IDs)
 python GDrive.py upload path (se o caminho for o arquivo, carregue-o. Se o caminho for dir, carregue o diretório vazio)
 python GDrive.py upload path R (o caminho deve be dir. dir é carregado recursivamente. todos os arquivos e sub dirs são carregados)
