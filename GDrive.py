@@ -10,7 +10,7 @@
 # python GDrive.py delete id (deletar arquivo ou dir com dado id)
 # python GDrive.py download id . (download dir ou arquivo com determinado id para o diretório atual)
 # python GDrive.py download id caminho (download dir ou arquivo com determinado id para determinado caminho na máquina local)
-# python GDrive.py compartilhar e-mail de id (compartilhar arquivo ou dir com determinado id com e-mail)
+# python GDrive.py share id e-mail (compartilhar arquivo ou dir com determinado id com e-mail)
 
 from __future__ import print_function
 import sys
