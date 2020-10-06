@@ -19,7 +19,7 @@ Criar um novo projeto do Cloud Platform e ativar automaticamente a API Drive:
 
 Ative a API do Drive
 
-Na caixa de diálogo resultante, clique em BAIXAR CONFIGURAÇÃO DO CLIENTE e salve o arquivo credentials.jsonem seu diretório de trabalho.
+Na caixa de diálogo resultante, clique em BAIXAR CONFIGURAÇÃO DO CLIENTE e salve o arquivo credentials.json em seu diretório de trabalho.
 
 # Etapa 2: Instale a biblioteca cliente do Google
 Execute o seguinte comando para instalar a biblioteca usando pip:
