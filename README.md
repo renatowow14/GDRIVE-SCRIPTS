@@ -12,7 +12,9 @@ A ferramenta de gerenciamento de pacotes pip e Uma conta do Google com o Google 
 
 # Etapa 1: ativar a API do Drive
 Criar um novo projeto do Cloud Platform e ativar automaticamente a API Drive:
+
 Ative a API do Drive
+
 Na caixa de diálogo resultante, clique em BAIXAR CONFIGURAÇÃO DO CLIENTE e salve o arquivo credentials.jsonem seu diretório de trabalho.
 
 # Etapa 2: Instale a biblioteca cliente do Google
