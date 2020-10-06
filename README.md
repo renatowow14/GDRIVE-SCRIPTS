@@ -44,4 +44,4 @@ python GDrive.py download id (download dir ou arquivo com determinado id para o 
 
 python GDrive.py download id caminho (download dir ou arquivo com determinado id para determinado caminho na máquina local)
 
-python GDrive.py compartilhar e-mail de id (compartilhar arquivo ou dir com determinado id com e-mail)
+python GDrive.py share id e-mail (compartilhar arquivo ou dir com determinado id com e-mail)
