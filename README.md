@@ -10,7 +10,7 @@ Python 2.6 ou superior
 A ferramenta de gerenciamento de pacotes pip e Uma conta do Google com o Google Drive ativado
 
 # Etapa 1: ativar a API do Drive
-Clique neste botão para criar um novo projeto do Cloud Platform e ativar automaticamente a API Drive:
+Criar um novo projeto do Cloud Platform e ativar automaticamente a API Drive:
 Ative a API do Drive
 Na caixa de diálogo resultante, clique em BAIXAR CONFIGURAÇÃO DO CLIENTE e salve o arquivo credentials.jsonem seu diretório de trabalho.
 
