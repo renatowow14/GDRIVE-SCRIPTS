@@ -3,6 +3,8 @@ Cliente de terminal Python para Google Drive para fácil upload, exclusão, list
 
 Conclua as etapas descritas no restante desta página para criar um aplicativo de linha de comando Python simples que faz solicitações à API Drive.
 
+-> https://developers.google.com/drive/api/v3/quickstart/python
+
 # Pré-requisitos
 Para executar este início rápido, você precisará de:
 
