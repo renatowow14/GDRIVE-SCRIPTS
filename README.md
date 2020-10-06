@@ -13,6 +13,8 @@ Python 2.6 ou superior
 A ferramenta de gerenciamento de pacotes pip e Uma conta do Google com o Google Drive ativado
 
 # Etapa 1: ativar a API do Drive
+Acesse : https://developers.google.com/drive/api/v3/quickstart/python
+
 Criar um novo projeto do Cloud Platform e ativar automaticamente a API Drive:
 
 Ative a API do Drive
