@@ -1,18 +1,17 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-#QuickStart:https://developers.google.com/drive/api/v3/quickstart/python
-#Step By Step:https://www.youtube.com/watch?v=LSP9PUx7n04
 #Mantenha GDrive.py e client_secret.json no mesmo diretório.
 # Uso de execução:
 # python GDrive.py list (lista todos os arquivos com seus IDs)
 # python GDrive.py upload path (se o caminho for o arquivo, carregue-o. Se o caminho for dir, carregue o diretório vazio)
 # python GDrive.py upload path R (o caminho deve be dir. dir é carregado recursivamente. todos os arquivos e sub dirs são carregados)
 # python GDrive.py delete id (deletar arquivo ou dir com dado id)
-# python GDrive.py download id . (download dir ou arquivo com determinado id para o diretório atual)
+# python GDrive.py download id (download dir ou arquivo com determinado id para o diretório atual)
 # python GDrive.py download id caminho (download dir ou arquivo com determinado id para determinado caminho na máquina local)
-# python GDrive.py share id e-mail (compartilhar arquivo ou dir com determinado id com e-mail)
+# python GDrive.py compartilhar e-mail de id (compartilhar arquivo ou dir com determinado id com e-mail)
 #OBS:Se existir arquivos vazios dentro da pasta de upload recursivo vai dar erro e quebrar o upload
 #Usar o comando para descobrir se existe : find . -maxdepth 5 -type f -empty, depois excluir eles.
+
 
 from __future__ import print_function
 import sys
@@ -21,7 +20,7 @@ import pip
 import httplib2
 import os
 from mimetypes import MimeTypes
-import socket
+
 
 try:
     from googleapiclient.errors import HttpError
@@ -36,7 +35,7 @@ except ImportError:
     print('sudo pip install --upgrade google-api-python-client')
     sys.exit(1)
 import sys
-
+import socket
 
 class Flag:
     auth_host_name = 'localhost'
@@ -88,7 +87,6 @@ def upload(path, parent_id=None):
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     http.redirect_codes = http.redirect_codes - {308}
-    socket.setdefaulttimeout(600)
     service = discovery.build('drive', 'v3', http=http)
 
     file_metadata = {
@@ -97,11 +95,12 @@ def upload(path, parent_id=None):
     }
     if parent_id:
         file_metadata['parents'] = [parent_id]
-
+ 
     media = MediaFileUpload(path,
                             mimetype=mime.guess_type(os.path.basename(path))[0],
                             resumable=True)
     try:
+        global file
         file = service.files().create(body=file_metadata,
                                   media_body=media,
                                   fields='id').execute()
@@ -122,6 +121,8 @@ def share(file_id, email):
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('drive', 'v3', http=http)
+    http.redirect_codes = http.redirect_codes - {308}
+    socket.settimeout(600)
     batch = service.new_batch_http_request(callback=callback)
     user_permission = {
         'type': 'user',
@@ -181,6 +182,7 @@ def createfolder(folder, recursive=False):
             if par in ids.keys():
                 file_metadata['parents'] = [ids[par]]
             print(root)
+            global file
             file = service.files().create(body=file_metadata,
                                           fields='id').execute()
             id = file.get('id')
@@ -203,6 +205,7 @@ if __name__ == '__main__':
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('drive', 'v3', http=http)
+    http.redirect_codes = http.redirect_codes - {308}
 
     method = sys.argv[1]
     if method == 'upload':
