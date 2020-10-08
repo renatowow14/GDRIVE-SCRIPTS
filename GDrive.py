@@ -11,6 +11,8 @@
 # python GDrive.py download id . (download dir ou arquivo com determinado id para o diretório atual)
 # python GDrive.py download id caminho (download dir ou arquivo com determinado id para determinado caminho na máquina local)
 # python GDrive.py share id e-mail (compartilhar arquivo ou dir com determinado id com e-mail)
+#OBS:Se existir arquivos vazios dentro da pasta de upload recursivo vai dar erro e quebrar o upload
+#Usar o comando para descobrir se existe : find . -maxdepth 5 -type f -empty, depois excluir eles.
 
 from __future__ import print_function
 import sys
@@ -96,7 +98,6 @@ def upload(path, parent_id=None):
     if parent_id:
         file_metadata['parents'] = [parent_id]
 
-    folder_id = "1OuMVHoRCbx8CTXR0e6JoJvsrZg2JRUbQ"
     media = MediaFileUpload(path,
                             mimetype=mime.guess_type(os.path.basename(path))[0],
                             resumable=True)
